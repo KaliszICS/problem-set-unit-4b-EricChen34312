@@ -85,7 +85,7 @@ The second constructor takes no parameters and creates an empty tile stack.</br>
 The TileStack should have the following methods:</br>
 A getter that returns the tile stack as an array of strings.</br>
 A size() method which returns the number of tiles in the stack.</br>
-A push(String tile) method that adds the provided tile to the top of the stack. Do nothing if the tile is null or empty.</br>
+A push(String tile) method that adds the provided tile to the top of the stack. Throw a NullPointerException if the tile is null.</br>
 A pop() method that removes and returns the top tile from the stack. If the stack is empty, return null.</br>
 A peek() method that returns the top tile without removing it. Return null if the stack is empty.</br>
 A removeAll() method that returns an array of all tiles and empties the stack. Return an empty String array if the stack is already empty.</br>
@@ -108,7 +108,7 @@ Has getters for its name, age, and inventory (inventory should return an array o
 The following methods are required:</br>
 
 A size() method which returns the number of pieces in the inventory.</br>
-A pickUp(GameBoard board, int row, int col) method that "picks up" a piece by recording the tile type at that position and adding a new GamePiece with that label to the inventory.</br>
+A pickUp(GameBoard board, int row, int col) method that "picks up" a piece adding the GamePiece with that label to the inventory. Throw a NullPointerException if there is no piece there</br>
 A discardPiece(GamePiece piece) method that removes the piece from the player's inventory. Throw a NullPointerException if the piece does not exist.</br>
 A returnPiece(GamePiece piece, GameBoard board, int row, int col) method that removes the piece from the inventory and sets in on the given tile. Throw a NullPointerException if the piece does not exist.</br>
 A toString() method that prints the player's name, age, and inventory (e.g. "Alex, 14, Red Pawn, Blue Rook, Green Token, Yellow Marker.")</br>
