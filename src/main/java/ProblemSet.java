@@ -14,13 +14,12 @@ public class ProblemSet {
 		};
 		GamePiece p = new GamePiece("Pawn", "White", 2);
 
-		GameBoard b = new GameBoard();
+		GameBoard b = new GameBoard(balls);
 
 		System.out.println(b);
 		b.fillFrom(new String[]{"e","e","e","e","e","e","e","e","asdf","adf","e","e","e","e","e","e","e","e","e","e","e","e","e","e","a","a","a","e","e","e","e","e","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a",});
 		System.out.println(b);
 
-		System.out.println(b.getPiece(4, 4));
 
 		/**
 		b.resetBoard();
