@@ -17,8 +17,12 @@ public class ProblemSet {
 		GameBoard b = new GameBoard();
 
 		System.out.println(b);
-		//b.fillFrom(new String[]{"e","e","e","e","e","e","e","e","asdf","adf","e","e","e","e","e","e","e","e","e","e","e","e","e","e","a","a","a","e","e","e","e","e","a",});
+		b.fillFrom(new String[]{"e","e","e","e","e","e","e","e","asdf","adf","e","e","e","e","e","e","e","e","e","e","e","e","e","e","a","a","a","e","e","e","e","e","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a","a",});
 		System.out.println(b);
+
+		System.out.println(b.getPiece(4, 4));
+
+		/**
 		b.resetBoard();
 		System.out.println(b);
 
@@ -45,15 +49,19 @@ public class ProblemSet {
 		TileStack t = new TileStack();
 		
 		t.push("a");
-		t.push("a");
+		t.push("b");
 		t.push("");
-		t.push("a");
+		t.push("c");
 		System.out.println(t);
 		System.out.println(Arrays.toString(t.getStack()));
 		System.out.println(t.size());
 		System.out.println(t.pop());
 		System.out.println(t);
 		System.out.println(t.peek());
+
+		System.out.println(Arrays.toString(t.removeAll()));
+		System.out.println(t);
+		*/
 	}
 }
 
@@ -254,7 +262,7 @@ class GameBoard{
 	 * @return return found GamePiece
 	 */
 	public GamePiece getPiece(int row, int col){
-		if(this.piecePos.length < row || row < 0 || col < 0 || this.piecePos[row].length < col){
+		if(this.piecePos.length <= row || row < 0 || col < 0 || this.piecePos[row].length <= col){
 			throw new IndexOutOfBoundsException("Specified position is out of bounds");
 		}
 
@@ -408,8 +416,8 @@ class TileStack{
 			return null;
 		}
 
-		String out = this.stack.get(0);
-		this.stack.remove(0);
+		String out = this.stack.get(this.stack.size()-1);
+		this.stack.remove(this.stack.size()-1);
 		return out;
 	}
 
@@ -422,7 +430,7 @@ class TileStack{
 			return null;
 		}
 
-		return this.stack.get(0);
+		return this.stack.get(this.stack.size()-1);
 	}
 
 	/**
