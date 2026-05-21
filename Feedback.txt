@@ -1,0 +1,12 @@
+K(30%): 100
+I(30%): 92
+C(10%): 90
+A(30%): 93
+95.5%
+
+Classes should each be in their own file.
+Don't forget the javadoc for the entire class.
+getInv should be getInventory
+fillFrom should loop through the values provided if there are fewer than there are spots on your board and repeat.
+getPiece should return null, not throw a nullpointer exception when there is no piece there.
+Otherwise great work.
