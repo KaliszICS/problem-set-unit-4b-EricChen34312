@@ -2,7 +2,7 @@ K(30%): 100
 I(30%): 92
 C(10%): 90
 A(30%): 93
-95.5%
+94.5%
 
 Classes should each be in their own file.
 Don't forget the javadoc for the entire class.
